@@ -1,15 +1,18 @@
 from flask import Flask, render_template, request
+from dotenv import load_dotenv
 import requests
+import os
 
 app = Flask(__name__)
+load_dotenv()
 
 @app.route("/", methods=['GET', 'POST'])
 def main_page():
     # API KEY
-    key = 'f5e13fbda78847db87d62048231612'
+    key = os.getenv('API_KEY')
 
     # API Endpoint
-    URL = 'http://api.weatherapi.com/v1/current.json'
+    URL = os.getenv('API_ENDPOINT')
     
     if request.method == 'POST':
         if request.form['zipcode']: # Ensure we receive a valid location to send to the API
