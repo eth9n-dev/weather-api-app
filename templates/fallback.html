@@ -1,0 +1,13 @@
+<html>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="{{ url_for('static',filename='styles/mainpage.css') }}"
+  />
+  <div class="login-box">
+    <h2>Current Weather in {{ city }}, {{ state }}:</h2>
+    <h3>{{ condition }} at</h3>
+    <h3>{{ temperature_f }} °F / {{ temperature_c }} °C</h3>
+  </div>
+  <style></style>
+</html>
